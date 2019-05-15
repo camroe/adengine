@@ -1,0 +1,10 @@
+package rules;
+dialect  "mvel"
+import com.cmr.faa.pojo.Aircraft;
+
+rule "AD1-OverallMatch"
+    when $aircraft : Aircraft((model == "M20G")
+    && (manufacturer == "Mooney")
+    && (serialNumber > "690009" && serialNumber < "690013"))
+    then System.out.println("AD1 matches on overall Match rule.");
+end

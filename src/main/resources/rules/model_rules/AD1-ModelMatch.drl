@@ -1,0 +1,8 @@
+package rules.model_rules;
+dialect  "mvel"
+import com.cmr.faa.pojo.Aircraft;
+
+rule "AD1-ModelMatch"
+ when $aircraft : Aircraft(model == "M20G")
+    then System.out.println("Model Matches AD1");
+end

@@ -1,0 +1,9 @@
+package rules;
+dialect  "mvel"
+
+import com.cmr.faa.pojo.Aircraft;
+
+rule "AD1-SerialNumberMatch"
+    when $aircraft : Aircraft(serialNumber == "690011")
+    then System.out.println("Serial Number Matches AD1");
+end

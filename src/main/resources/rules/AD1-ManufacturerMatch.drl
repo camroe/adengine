@@ -1,0 +1,8 @@
+package rules;
+dialect  "mvel"
+import com.cmr.faa.pojo.Aircraft;
+
+rule "AD1-ManufacturerMatch"
+    when $aircraft : Aircraft(manufacturer == "Mooney")
+    then System.out.println("Manufacturer Matches AD1");
+end
